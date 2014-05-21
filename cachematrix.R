@@ -5,7 +5,7 @@
 
 
 
-makeCacheMatrix<- function(x=numeric()){
+makeCacheMatrix<- function(x=matrix()){
         ##x is the matrix that we want calculate
         m<-NULL        ##initial value m is NULL, we have not calculated inverse yet
         set<-function(y){
@@ -18,11 +18,7 @@ makeCacheMatrix<- function(x=numeric()){
         list (set=set, get=get, setinverse=setinverse, getinverse=getinverse)
 }
 
-## Write a short comment describing this function
-
-
 cacheSolve<-function (x,...){
-   ## Return a matrix that is the inverse of 'x'
         m<-x$getinverse()   ##m receive value inverse
         if(!is.null(m)){
                 ##if m is not null return m and message, end function
